@@ -10,12 +10,14 @@ export async function renderToPNG(
     height?: number;
   } = {}
 ): Promise<Buffer> {
-  const browser = await chromium.launch({
-    headless: true,
-    // Use system default chromium, or specify a path if needed
-  });
-
+  let browser;
   try {
+    // Launch browser with better error handling for deployment environments
+    browser = await chromium.launch({
+      headless: true,
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    });
+
     const page = await browser.newPage({
       viewport: {
         width: options.width || 1080,
@@ -36,8 +38,12 @@ export async function renderToPNG(
 
     await page.close();
     return screenshotBuffer as Buffer;
+  } catch (error) {
+    throw new Error(`Failed to render PNG: ${error instanceof Error ? error.message : String(error)}`);
   } finally {
-    await browser.close();
+    if (browser) {
+      await browser.close();
+    }
   }
 }
 
@@ -51,11 +57,14 @@ export async function renderToPDF(
     height?: number;
   } = {}
 ): Promise<Buffer> {
-  const browser = await chromium.launch({
-    headless: true,
-  });
-
+  let browser;
   try {
+    // Launch browser with better error handling for deployment environments
+    browser = await chromium.launch({
+      headless: true,
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    });
+
     const page = await browser.newPage({
       viewport: {
         width: options.width || 1080,
@@ -76,7 +85,11 @@ export async function renderToPDF(
 
     await page.close();
     return pdfBuffer as Buffer;
+  } catch (error) {
+    throw new Error(`Failed to render PDF: ${error instanceof Error ? error.message : String(error)}`);
   } finally {
-    await browser.close();
+    if (browser) {
+      await browser.close();
+    }
   }
 }
