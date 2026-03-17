@@ -1,0 +1,82 @@
+{
+  "sporty": {
+    "name": "Sporty",
+    "description": "High-energy, bold, and action-oriented design",
+    "colorPalette": {
+      "primary": "#FF6B35",
+      "secondary": "#004E89",
+      "accent": "#F7B801",
+      "background": "#FFFFFF"
+    },
+    "fonts": {
+      "primary": "Poppins",
+      "secondary": "Roboto"
+    },
+    "imageKeywords": ["action", "sports", "dynamic", "energetic"],
+    "templates": ["hero", "split"]
+  },
+  "retro": {
+    "name": "Retro",
+    "description": "Warm, nostalgic, and vintage-inspired aesthetic",
+    "colorPalette": {
+      "primary": "#D4845C",
+      "secondary": "#6B4C3A",
+      "accent": "#E8B4A8",
+      "background": "#FFF8F3"
+    },
+    "fonts": {
+      "primary": "Georgia",
+      "secondary": "Roboto"
+    },
+    "imageKeywords": ["vintage", "retro", "nostalgic", "warm"],
+    "templates": ["split", "hero"]
+  },
+  "minimalist": {
+    "name": "Minimalist",
+    "description": "Clean, simple, and sophisticated design",
+    "colorPalette": {
+      "primary": "#000000",
+      "secondary": "#CCCCCC",
+      "accent": "#333333",
+      "background": "#FFFFFF"
+    },
+    "fonts": {
+      "primary": "Inter",
+      "secondary": "Inter"
+    },
+    "imageKeywords": ["minimalist", "simple", "clean", "modern"],
+    "templates": ["hero", "split"]
+  },
+  "energetic": {
+    "name": "Energetic",
+    "description": "Vibrant, playful, and youthful design",
+    "colorPalette": {
+      "primary": "#FF006E",
+      "secondary": "#FB5607",
+      "accent": "#FFBE0B",
+      "background": "#F8F9FA"
+    },
+    "fonts": {
+      "primary": "Poppins",
+      "secondary": "Poppins"
+    },
+    "imageKeywords": ["vibrant", "colorful", "playful", "fun"],
+    "templates": ["split", "hero"]
+  },
+  "professional": {
+    "name": "Professional",
+    "description": "Corporate, trustworthy, and sophisticated design",
+    "colorPalette": {
+      "primary": "#1F3A93",
+      "secondary": "#2D5016",
+      "accent": "#C41E3A",
+      "background": "#F5F5F5"
+    },
+    "fonts": {
+      "primary": "Georgia",
+      "secondary": "Roboto"
+    },
+    "imageKeywords": ["professional", "corporate", "business", "elegant"],
+    "templates": ["hero", "split"]
+  }
+}
